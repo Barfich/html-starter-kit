@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+// ----------------------------------------------
+// Sample page styles (demo)
+// ----------------------------------------------
+
+body {
+    height: 100vh;
+    width: 100%;
+    background: #59ABE3;
+    display: table;
+    .sample-box {
+        display: table-cell;
+        height: 100%;
+        width: 400px;
+        margin: 0 auto;
+        vertical-align: middle;
+        text-align: center;
+        color: $color-white;
+        svg {
+            width: 260px;
+            height: 260px;
+            color: rgba($color-white, 0.8);
+        }
+    }
+}

@@ -1,0 +1,23 @@
+/*
+ * d
+ *
+ */
+body {
+  height: 100vh;
+  width: 100%;
+  background: #59ABE3;
+  display: table; }
+  body .sample-box {
+    display: table-cell;
+    height: 100%;
+    width: 400px;
+    margin: 0 auto;
+    vertical-align: middle;
+    text-align: center;
+    color: #ffffff; }
+    body .sample-box svg {
+      width: 260px;
+      height: 260px;
+      color: rgba(255, 255, 255, 0.8); }
+
+/*# sourceMappingURL=main.css.map */
