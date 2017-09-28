@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+// ----------------------------------------------
+// Default styles resets
+// ----------------------------------------------
+
+// Abstract margin reset selector
+%reset-margin {
+    margin: 0;
+}
+// Abstract padding reset selector
+%reset-padding {
+    padding: 0;
+}

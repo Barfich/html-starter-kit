@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+// ---------------------------------------------------
+// Project's global styles: sizes, colors, fonts etc.
+// ---------------------------------------------------
+
+
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+html {
+    font-size: 10px;
+    line-height: 1.15;
+}
+body {
+    font: {
+        size: 14px;
+        weight: normal;
+        family: $font-sans-serif;
+    }
+    color: $color-white;
+    background: $color-white;
+    min-width: 320px;
+    @extend %reset-margin;
+    @extend %reset-padding;
+}
+p {
+    @extend %reset-margin;
+}
+h1, h2, h3, h4, h5, h6 {
+    @extend %reset-margin;
+}
+ul, ol {
+    list-style: none;
+    @extend %reset-margin;
+    @extend %reset-padding;
+}
+a {
+    outline: none;
+    text-decoration: none;
+    &:hover, &:active {
+
+    }
+}

@@ -1,0 +1,89 @@
+@charset "UTF-8";
+
+// -----------------------------------------------------
+// CSS3 2D and 3D transforms mixins
+// -----------------------------------------------------
+
+// Basic universal skeleton (is used by other transforms mixins)
+@mixin transform($transforms) {
+    -o-transform: $transforms;
+    -ms-transform: $transforms;
+    -moz-transform: $transforms;
+    -webkit-transform: $transforms;
+    transform: $transforms;
+}
+// Basic universal skeleton for 3D transform (is used by other transforms mixins) Browser support: IE 10+!
+@mixin transform3D($transforms) {
+    -o-transform: $transforms;
+    -moz-transform: $transforms;
+    -webkit-transform: $transforms;
+    transform: $transforms;
+}
+// Rotate (basic usage without "deg")
+@mixin rotate($deg) {
+    @include transform(rotate(#{$deg}deg));
+}
+// Rotate 3D around X axis. Browser support: IE 10+!
+@mixin rotateX($deg) {
+    @include transform3D(rotateX(#{$deg}deg));
+}
+// Rotate 3D around Y axis. Browser support: IE 10+!
+@mixin rotateY($deg) {
+    @include transform3D(rotateY(#{$deg}deg));
+}
+// Rotate 3D around Z axis. Browser support: IE 10+!
+@mixin rotateZ($deg) {
+    @include transform3D(rotateZ(#{$deg}deg));
+}
+// Scale around X axis
+@mixin scaleX($scaleX) {
+    @include transform(scaleX($scaleX));
+}
+// Scale around Y axis
+@mixin scaleY($scaleY) {
+    @include transform(scaleY($scaleY));
+}
+// Scale with separating values of X and Y axises
+@mixin scaleXY($scaleX, $scaleY) {
+    @include transform(scale($scaleX, $scaleY));
+}
+// Scale with complex values of X and Y axises (shorthand)
+@mixin scale($scale) {
+    @include transform(scale($scale));
+}
+// X-axis shift
+@mixin translateX($x) {
+    @include transform(translateX($x));
+}
+// Y-axis shift
+@mixin translateY($y) {
+    @include transform(translateY($y));
+}
+// X-axis and Y-axis shift
+@mixin translate($x, $y) {
+    @include transform(translate($x, $y));
+}
+// X-axis skew (basic usage without "deg")
+@mixin skewX($x) {
+    @include transform(skewX(#{$x}deg));
+}
+// Y-axis skew (basic usage without "deg")
+@mixin skewY($y) {
+    @include transform(skewY(#{$y}deg));
+}
+// X-axis and Y-axis skew (basic usage without "deg")
+@mixin skew($x, $y) {
+    @include transform(skew(#{$x}deg, #{$y}deg));
+}
+// Transform matrix (for mirror reflection use scaleX, scaleY with negative values)
+@mixin matrix($scaleX, $skewY, $skewX, $scaleY, $translateX, $translateY) {
+    @include transform(matrix($scaleX, $skewY, $skewX, $scaleY, $translateX, $translateY));
+}
+// Rotation point (basic usage: 50% 50%, this is element's center point, browser uses it by default)
+@mixin transform-origin($origin) {
+    -o-transform-origin: $origin;
+    -ms-transform-origin: $origin;
+    -moz-transform-origin: $origin;
+    -webkit-transform-origin: $origin;
+    transform-origin: $origin;
+}

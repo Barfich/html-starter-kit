@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+// ----------------------------------------------
+// Helper classes: floats, clear, displays etc.
+// ----------------------------------------------
+
+.fl-l {
+    float: left;
+}
+.fl-r {
+    float: right;
+}
+.clear {
+    &:before, &:after {
+        content: '';
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+.ov-h {
+    overflow: hidden;
+}
+.ov-a {
+    overflow: auto;
+}
+.ov-s {
+    overflow: scroll;
+}

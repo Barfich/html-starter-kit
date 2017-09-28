@@ -1,14 +1,22 @@
 @charset "UTF-8";
 
 /*
- * d
- *
+ * Add site name [http://site-address.com]
+ * Developer's name [http://developer-site.com]
+ * Version #1.1, Saint-Petersburg, 2017
+ * Build with Barfi's html starter kit [http://barfi.ru]
  */
-// This is entry point of all project's styles
-// -------------------------------------------
+
 // System files inc.
 @import "system/variables";
+@import "system/mixins";
+@import "system/libs";
+@import "system/resets";
+@import "system/global";
 
+// Partials files inc.
+@import "partials/header";
+@import "partials/footer";
 
 // Pages files inc.
 @import "pages/sample-page";
