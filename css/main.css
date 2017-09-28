@@ -236,19 +236,23 @@ a {
   text-decoration: none; }
 
 body {
+  background: #59ABE3; }
+
+.sample-table {
   height: 100vh;
   width: 100%;
-  background: #59ABE3;
   display: table; }
-  body .sample-box {
+  .sample-table .sample-table-cell {
     display: table-cell;
     height: 100%;
-    width: 400px;
-    margin: 0 auto;
     vertical-align: middle;
-    text-align: center;
     color: #ffffff; }
-    body .sample-box svg {
+  .sample-table .sample-box {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 15px 0; }
+    .sample-table .sample-box svg {
       width: 260px;
       height: 260px;
       color: rgba(255, 255, 255, 0.8); }

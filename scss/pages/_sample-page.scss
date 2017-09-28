@@ -3,20 +3,24 @@
 // ----------------------------------------------
 // Sample page styles (demo)
 // ----------------------------------------------
-
 body {
+    background: #59ABE3;
+}
+.sample-table {
     height: 100vh;
     width: 100%;
-    background: #59ABE3;
     display: table;
-    .sample-box {
+    .sample-table-cell {
         display: table-cell;
         height: 100%;
-        width: 400px;
-        margin: 0 auto;
         vertical-align: middle;
-        text-align: center;
         color: $color-white;
+    }
+    .sample-box {
+        max-width: 500px;
+        margin: 0 auto;
+        text-align: center;
+        padding: 15px 0;
         svg {
             width: 260px;
             height: 260px;
