@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+// ----------------------------------------------------------------------
+// Background size mixins
+// ----------------------------------------------------------------------
+
+// Background cover
+@mixin background-cover(){
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+// Background contain
+@mixin background-contain(){
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+}
+// Background size
+@mixin background-size($background-size) {
+    -webkit-background-size: $background-size;
+    -moz-background-size: $background-size;
+    -o-background-size: $background-size;
+    background-size: $background-size;
+}

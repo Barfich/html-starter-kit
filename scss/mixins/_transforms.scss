@@ -35,19 +35,19 @@
 @mixin rotateZ($deg) {
     @include transform3D(rotateZ(#{$deg}deg));
 }
-// Scale around X axis
+// Scale by X axis
 @mixin scaleX($scaleX) {
     @include transform(scaleX($scaleX));
 }
-// Scale around Y axis
+// Scale by Y axis
 @mixin scaleY($scaleY) {
     @include transform(scaleY($scaleY));
 }
-// Scale with separating values of X and Y axises
+// Scale by separating values of X and Y axises
 @mixin scaleXY($scaleX, $scaleY) {
     @include transform(scale($scaleX, $scaleY));
 }
-// Scale with complex values of X and Y axises (shorthand)
+// Scale by complex values of X and Y axises (shorthand)
 @mixin scale($scale) {
     @include transform(scale($scale));
 }
