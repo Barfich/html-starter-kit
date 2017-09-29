@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+// ----------------------------------------------------------------------
+// Box-shadow mixins
+// ----------------------------------------------------------------------
+
+// Single box-shadow. Basic usage:
+// 1. Outer shadow - @include box-shadow(2px, 1px, 5px, 3px, #000)
+// 2. Inner shadow - @include box-shadow(2px, 1px, 5px, 3px, #000, inset)
+// 3. You can use rgb() or rgba() functions for $color argument, like:
+//    @include box-shadow(2px, 2px, 3px, 0, rgba(#000, .1), inset)
+@mixin box-shadow-single($x-shift, $y-shift, $blur, $spread, $color, $inset: false) {
+    @if $inset {
+        -webkit-box-shadow:inset $x-shift $y-shift $blur $spread $color;
+        -moz-box-shadow:inset $x-shift $y-shift $blur $spread $color;
+        box-shadow:inset $x-shift $y-shift $blur $spread $color;
+    } @else {
+        -webkit-box-shadow: $x-shift $y-shift $blur $spread $color;
+        -moz-box-shadow: $x-shift $y-shift $blur $spread $color;
+        box-shadow: $x-shift $y-shift $blur $spread $color;
+    }
+}
+// Multiple box-shadow. Basic usage:
+// @include box-shadow-multiple(
+//      2px 1px 5px 3px #000,
+//      1px 2px 3px 0 rgba(#000, .2),
+//      inset 2px 1px 5px 3px #000
+// );
+@mixin box-shadow-multiple($shadows...) {
+    -webkit-box-shadow: $shadows;
+    -moz-box-shadow: $shadows;
+    box-shadow: $shadows;
+}
