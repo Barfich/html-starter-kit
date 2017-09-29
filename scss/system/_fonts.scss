@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+// ----------------------------------------------------------------------
+// Fonts definitions
+// ----------------------------------------------------------------------
+
+// Google fonts
+// @import url('https://fonts.googleapis.com/css?family=Pacifico&subset=latin-ext');
+// Local fonts generator
+@include font-face(Pacifico, 'fonts/Pacifico-Regular', normal, 400)

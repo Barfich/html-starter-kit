@@ -7,11 +7,19 @@
 
 // example: @include single-transition(background, 1s, ease-in-out, 0s);
 
-@mixin single-transition($property, $duration, $timing-function, $delay) {
-    -webkit-transition: $property $duration $timing-function $delay;
-    -moz-transition: $property $duration $timing-function $delay;
-    -o-transition: $property $duration $timing-function $delay;
-    transition: $property $duration $timing-function $delay;
+@mixin transition-single($property, $duration, $timing-function, $delay: null) {
+    @if $delay != null {
+        -webkit-transition: $property $duration $timing-function $delay;
+        -moz-transition: $property $duration $timing-function $delay;
+        -o-transition: $property $duration $timing-function $delay;
+        transition: $property $duration $timing-function $delay;
+    } @else {
+        -webkit-transition: $property $duration $timing-function;
+        -moz-transition: $property $duration $timing-function;
+        -o-transition: $property $duration $timing-function;
+        transition: $property $duration $timing-function;
+    }
+
 }
 
 // example: @include double-transition(background, 1s, ease-in-out, 0, opacity, .1s, ease-in-out, 0);

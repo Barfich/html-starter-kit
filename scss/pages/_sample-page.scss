@@ -21,10 +21,105 @@ body {
         margin: 0 auto;
         text-align: center;
         padding: 15px 0;
+        h1 {
+            margin-top: 60px;
+            margin-right: 50px;
+            position: relative;
+            font: {
+                family: $font-pacifico;
+                weight: normal;
+                style: normal;
+                size: 80px;
+            }
+            .barfi {
+                position: relative;
+                z-index: 1;
+            }
+            .flag {
+                position: absolute;
+                top: 5px;
+                right: 50%;
+                font: {
+                    family: Arial, Tahoma, Verdana, Helvetica, sans-serif;
+                    weight: 900;
+                    size: 14px;
+                }
+                text-transform: uppercase;
+                padding: 5px 18px 5px 18px;
+                background: #2C6B96;
+                margin-right: -64px;
+                &:before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: -7px;
+                    right: 100%;
+                    width: 40px;
+                    height: 40px;
+                    margin-right: -32px;
+                    border: 20px solid transparent;
+                    border-left-color: #59ABE3;
+                }
+                &:after {
+                    content: '';
+                    display: block;
+                    width: 50px;
+                    height: 100px;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: -5px;
+                    left: 100%;
+                    margin-left: -14px;
+                    background: #59ABE3;
+                }
+            }
+            .extra {
+                padding-top: 10px;
+                position: relative;
+                display: block;
+                font-size: 44px;
+                color: #2C6B96;
+                z-index: 2;
+                margin-left: -110px;
+            }
+        }
         svg {
+            display: block;
+            margin: 0 auto;
             width: 260px;
             height: 260px;
             color: rgba($color-white, 0.8);
+        }
+        p {
+            margin-top: -20px;
+            margin-bottom: 20px;
+            font: {
+                family: $font-pacifico;
+                weight: normal;
+                style: normal;
+                size: 30px;
+            }
+        }
+        nav {
+            font-size: 0;
+            a {
+                font: {
+                    family: Arial, Tahoma, Verdana, Helvetica, sans-serif;
+                    weight: 700;
+                    size: 14px;
+                }
+                line-height: 1;
+                display: inline-block;
+                margin: 0 6px;
+                padding: 10px 14px;
+                background: rgba($color-white, 0.9);
+                color: #2C6B96;
+                border-radius: 30px;
+                @include transition-single(all, 300ms, ease-out);
+                &:hover, &:active {
+                    @include box-shadow-single(0, 0, 0, 3px, rgba($color-white, .3));
+                }
+            }
         }
     }
 }

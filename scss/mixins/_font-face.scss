@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+// ----------------------------------------------------------------------
+// Font-face mixin
+// ----------------------------------------------------------------------
+
+// Basic usage:
+// Attention! Fonts paths without extension!
+// 1. Auto generate for 5 file formats: @include font-face(Pacifico, 'fonts/Pacifico-Regular', italic, 400);
+// 2. Generate with chosen formats: @include font-face(Pacifico, 'fonts/Pacifico-Regular', italic, 400, eot, woff, ttf);
+
+// Additional function for font-face mixin
+@function str-replace($string, $search, $replace: "") {
+    $index: str-index($string, $search);
+    @if $index {
+        @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    }
+    @return $string;
+}
+
+// Main font-face generation mixin
+@mixin font-face($font-name, $font-path, $font-weight, $font-style, $exts: eot woff ttf otf svg) {
+    $src: null;
+    $extmods: (
+            eot: "?",
+            svg: "#" + str-replace($font-name, " ", "_")
+    );
+    $formats: (
+            otf: "opentype",
+            ttf: "truetype"
+    );
+    @each $ext in $exts {
+        $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+        $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+        $src: append($src, url(quote("../"+ $font-path + "." + $extmod)) format(quote($format)), comma);
+    }
+    @font-face {
+        font-family: quote($font-name);
+        font-style: $font-style;
+        font-weight: $font-weight;
+        src: $src;
+    }
+}
